@@ -120,7 +120,6 @@ function make_base() {
 }
 
 function move(e) {
-  e.path[0].addEventListener("click", initialClick);
 
   var newX = e.clientX - 15;
   var newY = e.clientY - 15;
@@ -131,9 +130,6 @@ function move(e) {
   if (context.isPointInPath(mb_sqr_path, newX, newY) && e.path[0].className == "m1") {
     motherboard.setPlace(30, 75)
     motherboard.isInPlace = true
-    return
-  } else {
-    motherboard.isInPlace = false
     return
   }
 
@@ -176,29 +172,15 @@ function move(e) {
 }
 
 function initialClick(e) {
-  
   var text_area = document.querySelector("#text")
   var movable = find_element(e)
-  console.log("klikkiti:", movable.moving, movable.isInPlace)
   var desc = get_description(e)
   var element = movable.element
   var img = element.getElementsByTagName('img')[0]
   image = this;
 
-  if (movable.moving == false && movable.isInPlace == false) {
-    console.log("I should be here")
-    document.addEventListener("mousemove", move, false);
-    img.style.filter = "saturate(3)"
-    text_area.value = desc
-    saturated = true
-    //movable.moving = true
-  } else {
-    return
-  }
-
   if (movable.moving == true) {
     if (movable.isInPlace == true) {
-      console.log("wrong place")
       document.removeEventListener("mousemove", move);
       img.style.filter = "saturate(1)"
       saturated = false
@@ -206,14 +188,21 @@ function initialClick(e) {
       return
     } else {
       document.removeEventListener("mousemove", move);
-      console.log("wrong time")
       img.style.filter = "saturate(1)"
       saturated = false
       movable.moving = false
     }
   }
 
-  
+  if (movable.moving == false && movable.isInPlace == false) {
+    document.addEventListener("mousemove", move, false);
+    img.style.filter = "saturate(3)"
+    text_area.value = desc
+    saturated = true
+    movable.moving = true
+  } else {
+    return
+  }
 }
 
 function find_element(e) {
