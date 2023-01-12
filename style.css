@@ -1,0 +1,77 @@
+.k1{
+    width: 1000px;
+    height: 1000px;
+  }
+
+  #background {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #motherboard, #cpu, #psu, #gpu, #cooling, #hard-drive, .m1, .c1, .g1, .hd1, .r1, .po1, .co1 {
+    min-width: 100px;
+    min-height: 100px;
+    position: absolute;
+  }
+
+  #ram {
+    width: 125px;
+    min-height: 540px;
+    position: absolute;
+  }
+  
+  #mb-desc {
+    display: none;
+  }
+  
+  .m1:hover #mb-desc {
+    display: block;
+    color:brown;
+  }
+
+  #text_show {
+    position: absolute;
+    left: 1650px;
+  }
+
+  #text {
+    resize: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .m1{
+  width: 500px;
+  height: 580px;
+  }
+
+  .c1 {
+    width: 120px;
+    height: 120px;
+  }
+  .g1{
+    width:550px ;
+    height:100px;
+  }
+.hd1{
+    width:250px ;
+    height:70px
+    ;
+}
+
+.po1{
+  width: 400px;
+  height: 200px;
+}
+.co1{
+  width:200px ;
+  height:200px ;
+}
+
+.r1{
+height: 370px;
+
+}
