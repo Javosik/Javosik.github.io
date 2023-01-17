@@ -127,43 +127,43 @@ function move(e) {
   image.style.left = newX + "px";
   image.style.top = newY + "px";
 
-  if (context.isPointInPath(mb_sqr_path, newX, newY) && e.path[0].className == "m1") {
+  if (context.isPointInPath(mb_sqr_path, newX, newY) && e.composedPath()[0].className == "m1") {
     motherboard.setPlace(30, 75)
     motherboard.isInPlace = true
     return
   }
 
-  if (context.isPointInPath(c_sqr_path, newX, newY) && e.path[0].className == "c1") {
+  if (context.isPointInPath(c_sqr_path, newX, newY) && e.composedPath()[0].className == "c1") {
     cpu.setPlace(230, 220)
     cpu.isInPlace = true
     return
   }
 
-  if (context.isPointInPath(g_sqr_path, newX, newY) && e.path[0].className == "g1") {
+  if (context.isPointInPath(g_sqr_path, newX, newY) && e.composedPath()[0].className == "g1") {
     gpu.setPlace(5, 480)
     gpu.isInPlace = true
     return
   }
 
-  if (context.isPointInPath(r_sqr_path, newX, newY) && e.path[0].className == "r1") {
+  if (context.isPointInPath(r_sqr_path, newX, newY) && e.composedPath()[0].className == "r1") {
     ram.setPlace(456, 108)
     ram.isInPlace = true
     return
   }
 
-  if (context.isPointInPath(psu_sqr_path, newX, newY) && e.path[0].className == "po1") {
+  if (context.isPointInPath(psu_sqr_path, newX, newY) && e.composedPath()[0].className == "po1") {
     psu.setPlace(59, 687)
     psu.isInPlace = true
     return
   }
 
-  if (context.isPointInPath(hd_sqr_path, newX, newY) && e.path[0].className == "hd1") {
+  if (context.isPointInPath(hd_sqr_path, newX, newY) && e.composedPath()[0].className == "hd1") {
     hard_drive.setPlace(544, 595)
     hard_drive.isInPlace = true
     return
   }
 
-  if (context.isPointInPath(co_sqr_path, newX, newY) && e.path[0].className == "co1") {
+  if (context.isPointInPath(co_sqr_path, newX, newY) && e.composedPath()[0].className == "co1") {
     cooling.setPlace(194, 175)
     cooling.isInPlace = true
     return
@@ -206,7 +206,7 @@ function initialClick(e) {
 }
 
 function find_element(e) {
-  switch (e.path[0].className) {
+  switch (e.composedPath()[0].className) {
     case 'm1':
       return motherboard
       break;
@@ -234,7 +234,7 @@ function find_element(e) {
 }
 
 function get_description(e) {
-  switch (e.path[0].className) {
+  switch (e.composedPath()[0].className) {
     case 'm1':
       return "EMAPLAAT (MOTHERBOARD)\n\nEmaplaat on elektroonikaseadmetes, eriti arvutites peamine trükkplaat, mis ühendab elektriliselt arvutikomponente ja millel on pistikupesad lisa komponentide ja välisseadmete ühendamiseks.\nSõltuvalt arvuti arhitektuurist võivad arvutikomponendid olla ühendatud emaplaadi pesadesse või joodetud emaplaadile (sellele integreeritud). Komponentidevahelisi elektrilisi ühendusi nimetatakse siinideks.\nPistmike vahendusel ühendatakse emaplaadile keskprotsessor (CPU), graafika protsessor, muutmälu moodulid, kõvaketas või pooljuhtketas, arvuti alglaadimise programm (BIOS/UEFI), toiteplokk, laienduskaardid ja lisaseadmed."
       break;
