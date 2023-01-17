@@ -209,27 +209,20 @@ function find_element(e) {
   switch (e.composedPath()[0].className) {
     case 'm1':
       return motherboard
-      break;
     case 'c1':
       return cpu
-      break;
     case 'g1':
       return gpu
-      break;
     case 'r1':
       return ram
-      break;
     case 'po1':
       return psu
-      break;
     case 'hd1':
       return hard_drive
-      break;
     case 'co1':
       return cooling
-      break;
     default:
-      console.log("I don't work")
+      console.log("Couldn't find element:", e.composedPath())
   }
 }
 
@@ -237,27 +230,20 @@ function get_description(e) {
   switch (e.composedPath()[0].className) {
     case 'm1':
       return "EMAPLAAT (MOTHERBOARD)\n\nEmaplaat on elektroonikaseadmetes, eriti arvutites peamine trükkplaat, mis ühendab elektriliselt arvutikomponente ja millel on pistikupesad lisa komponentide ja välisseadmete ühendamiseks.\nSõltuvalt arvuti arhitektuurist võivad arvutikomponendid olla ühendatud emaplaadi pesadesse või joodetud emaplaadile (sellele integreeritud). Komponentidevahelisi elektrilisi ühendusi nimetatakse siinideks.\nPistmike vahendusel ühendatakse emaplaadile keskprotsessor (CPU), graafika protsessor, muutmälu moodulid, kõvaketas või pooljuhtketas, arvuti alglaadimise programm (BIOS/UEFI), toiteplokk, laienduskaardid ja lisaseadmed."
-      break;
     case 'c1':
       return "Protsessor (CPU)\n\nKeskseade ehk keskprotsessor ehk kesktöötlusseade (inglise keeles central processing unit, CPU), lühidalt protsessor, on arvuti või programmeeritava kontrolleri riistvara, mis täidab programmide masina keeles antud juhiseid ning on peamine vahend ettenähtud aritmeetika-, loogika- ja sisend-/väljund operatsioonide teostamiseks.\nProtsessor on integraallülituse kujul kasutusel alates 1960. aastatest. Sellest ajast on protsessori ehitus, arhitektuur ja teostus korduvalt muutunud, kuid põhifunktsioonid on jäänud samaks."
-      break;
     case 'g1':
       return "Videokaart (GPU)\n\nVideokaart(ka graafikakaart, graafikakiirendi, kuvaadapter, video adapter, graafika adapter) on arvuti laienduskaart ja seade, mis muundab mälus oleva kujutise kuvarile arusaadavaks signaaliks."
-      break;
     case 'r1':
       return "Muutmälu (RAM)\n\n(inglise keele sõnadest Random Access Memory, suvapöördusmälu, otsepöördusmälu) on pooljuhtmälu liik, kuhu saab andmeid kirjutada ja kust neid saab lugeda. Suvapöördus tähendab, et muutmälu iga adresseeritava üksuse poole saab nii lugemiseks kui kirjutamiseks ühtviisi kiirelt otse pöörduda.\nMuutmälu tähenduses on kasutusel ka terminid põhimälu (nt protsessori põhimälu ja vahemälu), sisemälu  (protsessori sees, erinevalt välismälust), samuti töömälu (näiteks kõrvutuses töömälu maht ja salvestusmälu maht) Muutmälu kuulub haihtuvate ehk hävimälude hulka, millelt toitepinge kadumisel andmed kustuvad."
-      break;
     case 'po1':
       return "Toiteplokk (Power Unit)\n\nToiteplokk on elektrotehnikas kasutatav seade, mis varustab elektrienergia tarbijat sobivate parameetritega elektriga (pinge, voolutugevus jne). Toiteplokid muundavad energiat tarbijale sobivaks, näiteks keemilist energiat elektrienergiaks või võrgupinget alalisvooluks. Tavaliselt on majapidamises saadaval 230 V / 50 Hz vahelduvpinge või autoakust 12 V alalispinge. Voolu tarbivad seadmed aga vajavad tihti teistsugust pinget, näiteks paljud arvutid vajavad stabiliseeritud pingeid +3,3 V, +5 V ja –5 V, +12 V ja –12 V ühise maanduse suhtes."
-      break;
     case 'hd1':
       return "Kõvaketas (HDD)\n\nKõvaketas (inglise hard disk drive, lühend HDD) on andmetalletusseade, mis kasutab andmete talletamiseks pöörlevaid jäiku mittemagnetilisi, enamasti kas alumiiniumsulamist või klaasist plaate (kettaid), mis on kaetud õhukese magnetilise ferrooksiidlaki kihiga. Andmeid loetakse ja kirjutatakse kettale digitaalselt kodeerituna ning need säilivad ka voolu kadumisel.\n\n(SSD)\n\nPooljuhtketas ehk SSD-ketas (ingl solid state drive) on arvutitehnikas välkmälul põhinev andmesalvesti, millel erinevalt HDD-kõvakettast puuduvad liikuvad osad. SSD väliskuju ja elektrilised ühendused võivad sarnaneda HDD-kettale, kuid võivad ka erineda. Näiteks võib SSD olla teostatud PCIe-laiendkaardina. Ka võib SSD olla HDD-ga kombineeritud hübriidketas SSHD (solid state hybrid drive), kus tihedamini kasutatavad failid paigutatakse kiirema kättesaadavuse huvides SSDsse."
-      break;
     case 'co1':
       return "Jahutus (Cooling)\n\nJahutamine ehk jahutus on keskkonna, eseme, materijali, seadme või selle osa temperatuuri alandamine. See on termilise energia vähendamine selle ülekandmisega teisele kehale või süsteemile."
-      break;
     default:
-      console.log("I don't work")
+      console.log("Something wrong with getting description of:", e.composedPath())
   }
 }
 
