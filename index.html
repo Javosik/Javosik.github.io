@@ -5,12 +5,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
+  <script src="/locale.js"></script>
+  <script src="/LanguageSelector.js"></script>
+  <script src="/pages/language.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="stylesheet" href="style.css">
-  <title>project</title>
+  <title>:title</title>
 </head>
 
 <body>
- <h1>Starting screen</h1>
- <a href="/pages/base.html">Alusta mängu</a>
+  <div id="start_game_div">
+    <h1 id="start_game">:title</h1>
+    <a id="start_game_button" href="/pages/base.html">:start_game</a>
+    <select id="langSelector">
+      <option>:choose</option>
+      <option value="en">:english</option>
+      <option value="et">:estonian</option>
+      <option value="ru">:russian</option>
+    </select>
+  </div>
 </body>
 </html>

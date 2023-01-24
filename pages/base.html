@@ -5,19 +5,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="stylesheet" href="/style.css">
-  <title>project</title>
+  <title>:title</title>
 </head>
 
 <body>
-  <a href="/pages/end.html">Lõpeta mäng</a>
+  <a id="start_game_button" href="/pages/end.html">:end_game</a>
   <div id="background">
     <div id="bg-canvas">
       <canvas id="viewport" width="1000" height="1000"></canvas>
     </div>
     <div id="text_show">
-      <h1>Kirjeldused</h1>
-      <textarea rows="20" cols="50" id="text" readonly></textarea>
+      <h1 id="h1_desc">:descriptions</h1>
+      <textarea id="text" rows="20" cols="50" id="text" readonly></textarea>
     </div>
   </div>
   <div id="bg-pictures">
@@ -42,11 +47,12 @@
     <div id="cooling">
       <img class="co1" src="https://i.ibb.co/PtFfNQK/fan-cut.png">
     </div>
-    <div id="mb-desc">
-      <h1>Motherboard / маиеринская плата / emaplaat</h1>
-    </div>
   </div>
 </body>
+<script src="/locale.js"></script>
+<script src="/LanguageSelector.js"></script>
+<script src="/pages/language.js"></script>
 <script src="/pages/script.js"></script>
-
+<script src="/pages/classes.js"></script>
+<script src="/pages/components.js"></script>
 </html>
