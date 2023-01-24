@@ -172,4 +172,3 @@ window.onload = async function () {
   cooling.element.addEventListener("mousedown", initialClick, false);
   make_base()
 }
-//lang_start()
