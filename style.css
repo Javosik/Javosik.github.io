@@ -80,7 +80,7 @@ height: 370px;
   font-family: Roboto;
 }
 
-#start_game_button{
+.start_game_button{
   font-family: Roboto;
   font: bold 25px Arial;
   text-decoration: none;

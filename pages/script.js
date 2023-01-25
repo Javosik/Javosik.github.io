@@ -31,6 +31,7 @@ function make_base() {
   base_image.src = 'https://i.ibb.co/gm7S0Lc/Png-Item-3125635.png'
 }
 
+sizer = 45
 function move(e) {
 
   var newX = e.clientX - 15;
@@ -40,43 +41,43 @@ function move(e) {
   image.style.top = newY + "px";
 
   if (context.isPointInPath(mb_sqr_path, newX, newY) && e.composedPath()[0].className == "m1") {
-    motherboard.setPlace(30, 75+30)
+    motherboard.setPlace(30, 75+sizer)
     motherboard.isInPlace = true
     return
   }
 
   if (context.isPointInPath(c_sqr_path, newX, newY) && e.composedPath()[0].className == "c1") {
-    cpu.setPlace(230, 220+30)
+    cpu.setPlace(230, 220+sizer)
     cpu.isInPlace = true
     return
   }
 
   if (context.isPointInPath(g_sqr_path, newX, newY) && e.composedPath()[0].className == "g1") {
-    gpu.setPlace(5, 480+30)
+    gpu.setPlace(5, 480+sizer)
     gpu.isInPlace = true
     return
   }
 
   if (context.isPointInPath(r_sqr_path, newX, newY) && e.composedPath()[0].className == "r1") {
-    ram.setPlace(456, 108+30)
+    ram.setPlace(456, 108+sizer)
     ram.isInPlace = true
     return
   }
 
   if (context.isPointInPath(psu_sqr_path, newX, newY) && e.composedPath()[0].className == "po1") {
-    psu.setPlace(59, 687+30)
+    psu.setPlace(59, 687+sizer)
     psu.isInPlace = true
     return
   }
 
   if (context.isPointInPath(hd_sqr_path, newX, newY) && e.composedPath()[0].className == "hd1") {
-    hard_drive.setPlace(544, 595+30)
+    hard_drive.setPlace(544, 595+sizer)
     hard_drive.isInPlace = true
     return
   }
 
   if (context.isPointInPath(co_sqr_path, newX, newY) && e.composedPath()[0].className == "co1") {
-    cooling.setPlace(194, 175+30)
+    cooling.setPlace(194, 175+sizer)
     cooling.isInPlace = true
     return
   }
