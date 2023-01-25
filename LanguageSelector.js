@@ -11,7 +11,7 @@ class LanguageSelector {
 		if (lang != null) {
 			return lang;
 		} else {
-			return 'en';
+			return 'et';
 		}
 	}
 	removeLang()

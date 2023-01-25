@@ -15,6 +15,11 @@ window.onload = function () {
 }
 
 function keep_lang(l) {
-    l.setLang(localStorage.getItem("lang"));
+    var language = localStorage.getItem("lang")
+    if (language == null) {
+        l.setLang("et")
+    } else {
+        l.setLang(language)
+    }
     return l
 }
