@@ -5,7 +5,15 @@ class Hitbox {
       this.width = width
       this.height = height
     }
-  
+    
+    setHitbox(x, y, width, height) {
+      this.x = x
+      this.y = y
+      this.width = width
+      this.height = height
+      return Hitbox
+    }
+
     setBorder() {
       var border = new Path2D
       border.rect(this.x, this.y, this.width, this.height)

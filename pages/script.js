@@ -2,12 +2,16 @@ var canvas = document.getElementById('viewport'),
   context = canvas.getContext('2d');
 var saturated = false
 
+var w = canvas.width = canvas.clientWidth;
+var h = canvas.height = canvas.clientHeight;
+
 function make_base() {
   base_image = new Image();
   base_image.onload = function () {
-    context.drawImage(base_image, 0, 0, 1000, 1000);
-
+    context.drawImage(base_image, 0, 0, w, h);
     //emaplaadi ruut
+    context.fillStyle = "blue";
+    context.fillRect(window.mb_sqr.x, mb_sqr.y, mb_sqr.width, mb_sqr.height);
     context.stroke(window.mb_sqr_path);
 
     //cpu ruut
@@ -31,8 +35,76 @@ function make_base() {
   base_image.src = 'https://i.ibb.co/gm7S0Lc/Png-Item-3125635.png'
 }
 
-sizer = 45
+function getOffset(el) {
+  const rect = el.getBoundingClientRect();
+  return {
+    left: rect.left + window.scrollX,
+    top: rect.top + window.scrollY
+  };
+}
+
+var canvas_left = getOffset(canvas).left
+var canvas_top = getOffset(canvas).top    
+
+function onResizeFunction() {
+  canvas_left = getOffset(canvas).left
+  canvas_top = getOffset(canvas).top
+  if (motherboard.isInPlace == false) {
+    mb_sqr.setHitbox(canvas_left+30, canvas_top+75, mb_sqr.width, mb_sqr.height)
+    motherboard.setPlace(canvas_left+996, canvas_top+19)
+  } else {
+    motherboard.setPlace(canvas_left+30, canvas_top+75)
+  }
+  if (cpu.isInPlace == false) {
+    c_sqr.setHitbox(canvas_left+230, canvas_top+220, c_sqr.width, c_sqr.height)
+  } else {
+    cpu.setPlace(canvas_left+230, canvas_top+220)
+  }
+  
+  if (gpu.isInPlace == false) {
+    g_sqr.setPlace(canvas_left+5, canvas_top+480)
+    gpu.setPlace(canvas_left+996, canvas_top+605)
+  } else {
+    g_sqr.setPlace(canvas_left+5, canvas_top+480)
+    gpu.setPlace(canvas_left+5, canvas_top+480)
+  }
+  
+  if (ram.isInPlace == false) {
+    r_sqr.setPlace(canvas_left+456, canvas_top+108)
+    ram.setPlace(canvas_left+1514, canvas_top+36)
+  } else {
+    r_sqr.setPlace(canvas_left+456, canvas_top+108)
+    ram.setPlace(canvas_left+456, canvas_top+108)
+  }
+  
+  if (psu.isInPlace == false) {
+    psu_sqr.setPlace(canvas_left+59, canvas_top+687)
+    psu.setPlace(canvas_left+1010, canvas_top+719)
+  } else {
+    psu_sqr.setPlace(canvas_left+59, canvas_top+687)
+    psu.setPlace(canvas_left+59, canvas_top+687)
+  }
+  
+  if (hard_drive.isInPlace == false) {
+    hd_sqr.setPlace(canvas_left+544, canvas_top+595)
+    hard_drive.setPlace(canvas_left+1007, canvas_top+948)
+  } else {
+    hd_sqr.setPlace(canvas_left+544, canvas_top+595)
+    hard_drive.setPlace(canvas_left+544, canvas_top+595)
+  }
+  
+  if (cooling.isInPlace == false) {
+    co_sqr.setPlace(canvas_left+194, canvas_top+175)
+    cooling.setPlace(canvas_left+1414, canvas_top+719)
+  } else {
+    co_sqr.setPlace(canvas_left+194, canvas_top+175)
+    cooling.setPlace(canvas_left+194, canvas_top+175)
+  }
+  
+}
+
 function move(e) {
+  
 
   var newX = e.clientX - 15;
   var newY = e.clientY - 15;
@@ -41,43 +113,43 @@ function move(e) {
   image.style.top = newY + "px";
 
   if (context.isPointInPath(mb_sqr_path, newX, newY) && e.composedPath()[0].className == "m1") {
-    motherboard.setPlace(30, 75+sizer)
+    motherboard.setPlace(canvas_left+30, canvas_top+75)
     motherboard.isInPlace = true
     return
   }
 
   if (context.isPointInPath(c_sqr_path, newX, newY) && e.composedPath()[0].className == "c1") {
-    cpu.setPlace(230, 220+sizer)
+    cpu.setPlace(canvas_left+230, canvas_top+220)
     cpu.isInPlace = true
     return
   }
 
   if (context.isPointInPath(g_sqr_path, newX, newY) && e.composedPath()[0].className == "g1") {
-    gpu.setPlace(5, 480+sizer)
+    gpu.setPlace(canvas_left+5, canvas_top+480)
     gpu.isInPlace = true
     return
   }
 
   if (context.isPointInPath(r_sqr_path, newX, newY) && e.composedPath()[0].className == "r1") {
-    ram.setPlace(456, 108+sizer)
+    ram.setPlace(canvas_left+456, canvas_top+108)
     ram.isInPlace = true
     return
   }
 
   if (context.isPointInPath(psu_sqr_path, newX, newY) && e.composedPath()[0].className == "po1") {
-    psu.setPlace(59, 687+sizer)
+    psu.setPlace(canvas_left+59, canvas_top+687)
     psu.isInPlace = true
     return
   }
 
   if (context.isPointInPath(hd_sqr_path, newX, newY) && e.composedPath()[0].className == "hd1") {
-    hard_drive.setPlace(544, 595+sizer)
+    hard_drive.setPlace(canvas_left+544, canvas_top+595)
     hard_drive.isInPlace = true
     return
   }
 
   if (context.isPointInPath(co_sqr_path, newX, newY) && e.composedPath()[0].className == "co1") {
-    cooling.setPlace(194, 175+sizer)
+    cooling.setPlace(canvas_left+194, canvas_top+175)
     cooling.isInPlace = true
     return
   }
@@ -173,3 +245,4 @@ window.onload = async function () {
   cooling.element.addEventListener("mousedown", initialClick, false);
   make_base()
 }
+window.addEventListener("resize", onResizeFunction);

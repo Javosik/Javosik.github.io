@@ -31,7 +31,6 @@
 
   #text_show {
     position: absolute;
-    left: 1650px;
   }
 
   #text {
@@ -80,17 +79,9 @@ height: 370px;
   font-family: Roboto;
 }
 
-.start_game_button{
+#start_game_button{
   font-family: Roboto;
-  font: bold 25px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  margin-bottom: 5px;
 }
 
 #start_game_div{
@@ -114,7 +105,7 @@ height: 370px;
 
 #choose_language_button {
   font-family: Roboto;
-  font: bold 25px Arial;
+  font: bold 25px;
   text-decoration: none;
   background-color: #EEEEEE;
   color: #333333;
@@ -124,4 +115,8 @@ height: 370px;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
   margin-right: 20px;
+}
+
+#body-bg{
+  background-color:aquamarine
 }
