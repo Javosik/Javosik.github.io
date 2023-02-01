@@ -9,29 +9,8 @@ function make_base() {
   base_image = new Image();
   base_image.onload = function () {
     context.drawImage(base_image, 0, 0, w, h);
-/* 
-    //emaplaadi ruut
-    context.stroke(window.mb_sqr_path);
-
-    //cpu ruut
-    context.stroke(window.c_sqr_path);
-
-    //gpu ruut
-    context.stroke(window.g_sqr_path)
-
-    //ram ruut
-    context.stroke(window.r_sqr_path)
-
-    //psu ruut
-    context.stroke(window.psu_sqr_path)
-
-    //hard drive ruut
-    context.stroke(window.hd_sqr_path)
-
-    //cooler ruut
-    context.stroke(window.co_sqr_path) */
   }
-  base_image.src = 'https://i.ibb.co/gm7S0Lc/Png-Item-3125635.png'
+  base_image.src = '/images/case.png'
 }
 
 function getOffset(el) {
@@ -45,19 +24,18 @@ function getOffset(el) {
 function onResizeFunction() {
   canvas_left = getOffset(canvas).left
   canvas_top = getOffset(canvas).top
-  console.log("changes in hitbox placement")
 
   if (motherboard.isInPlace == false) {
-    mb_sqr.setHitbox(canvas_left+30, canvas_top+75, mb_sqr.width, mb_sqr.height)
-    motherboard.setPlace(canvas_left+996, canvas_top+19)
+    mb_sqr.setHitbox(canvas_left+30, canvas_top, mb_sqr.width, mb_sqr.height)
+    motherboard.setPlace(canvas_left+996-400, canvas_top)
   } else {
-    mb_sqr.setHitbox(canvas_left+30, canvas_top+75, mb_sqr.width, mb_sqr.height)
-    motherboard.setPlace(canvas_left+30, canvas_top+75)
+    mb_sqr.setHitbox(canvas_left+30, canvas_top, mb_sqr.width, mb_sqr.height)
+    motherboard.setPlace(canvas_left+30, canvas_top)
   }
 
   if (cpu.isInPlace == false) {
     c_sqr.setHitbox(canvas_left+230, canvas_top+220, c_sqr.width, c_sqr.height)
-    cpu.setPlace(canvas_left+1508, canvas_top+434)
+    cpu.setPlace(canvas_left+1508-400, canvas_top+434)
   } else {
     c_sqr.setHitbox(canvas_left+230, canvas_top+220, c_sqr.width, c_sqr.height)
     cpu.setPlace(canvas_left+230, canvas_top+220)   
@@ -65,7 +43,7 @@ function onResizeFunction() {
   
   if (gpu.isInPlace == false) {
     g_sqr.setHitbox(canvas_left+5, canvas_top+480)
-    gpu.setPlace(canvas_left+996, canvas_top+605)
+    gpu.setPlace(canvas_left+996-400, canvas_top+605)
   } else {
     g_sqr.setHitbox(canvas_left+5, canvas_top+480)
     gpu.setPlace(canvas_left+5, canvas_top+480)
@@ -73,7 +51,7 @@ function onResizeFunction() {
   
   if (ram.isInPlace == false) {
     r_sqr.setHitbox(canvas_left+456, canvas_top+108)
-    ram.setPlace(canvas_left+1514, canvas_top+36)
+    ram.setPlace(canvas_left+1514-400, canvas_top+36)
   } else {
     r_sqr.setHitbox(canvas_left+456, canvas_top+108)
     ram.setPlace(canvas_left+456, canvas_top+108)
@@ -81,7 +59,7 @@ function onResizeFunction() {
   
   if (psu.isInPlace == false) {
     psu_sqr.setHitbox(canvas_left+59, canvas_top+687)
-    psu.setPlace(canvas_left+1010, canvas_top+719)
+    psu.setPlace(canvas_left+1010-400, canvas_top+719)
   } else {
     psu_sqr.setHitbox(canvas_left+59, canvas_top+687)
     psu.setPlace(canvas_left+59, canvas_top+687)
@@ -89,7 +67,7 @@ function onResizeFunction() {
   
   if (hard_drive.isInPlace == false) {
     hd_sqr.setHitbox(canvas_left+544, canvas_top+595)
-    hard_drive.setPlace(canvas_left+1007, canvas_top+948)
+    hard_drive.setPlace(canvas_left+1007-400, canvas_top+948)
   } else {
     hd_sqr.setHitbox(canvas_left+544, canvas_top+595)
     hard_drive.setPlace(canvas_left+544, canvas_top+595)
@@ -97,7 +75,7 @@ function onResizeFunction() {
   
   if (cooling.isInPlace == false) {
     co_sqr.setHitbox(canvas_left+194, canvas_top+175)
-    cooling.setPlace(canvas_left+1414, canvas_top+719)
+    cooling.setPlace(canvas_left+1414-400, canvas_top+719)
   } else {
     co_sqr.setHitbox(canvas_left+194, canvas_top+175)
     cooling.setPlace(canvas_left+194, canvas_top+175)
@@ -114,13 +92,13 @@ function move(e) {
   image.style.top = newY + "px";
 
   if (context.isPointInPath(mb_sqr_path, newX, newY) && e.composedPath()[0].className == "m1") {
-    motherboard.setPlace(canvas_left+30, canvas_top+75)
+    motherboard.setPlace(canvas_left+60, canvas_top+40)
     motherboard.isInPlace = true
     return
   }
 
   if (context.isPointInPath(c_sqr_path, newX, newY) && e.composedPath()[0].className == "c1") {
-    cpu.setPlace(canvas_left+230, canvas_top+220)
+    cpu.setPlace(canvas_left+190, canvas_top+130)
     cpu.isInPlace = true
     return
   }

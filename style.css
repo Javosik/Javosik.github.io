@@ -1,90 +1,103 @@
-.k1{
-    width: 1000px;
-    height: 1000px;
-  }
-
-  #background {
-    display: flex;
-    flex-direction: row;
-  }
-
-  #motherboard, #cpu, #psu, #gpu, #cooling, #hard-drive, .m1, .c1, .g1, .hd1, .r1, .po1, .co1 {
-    min-width: 100px;
-    min-height: 100px;
-    position: absolute;
-  }
-
-  #ram {
-    width: 125px;
-    min-height: 300px;
-    position: absolute;
-  }
-  
-  #mb-desc {
-    display: none;
-  }
-  
-  .m1:hover #mb-desc {
-    display: block;
-    color:brown;
-  }
-
-  #text_show {
-    position: absolute;
-  }
-
-  #text {
-    resize: none;
-    overflow: auto;
-    outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-  }
-
-  .m1{
-  width: 500px;
-  height: 580px;
-  }
-
-  .c1 {
-    width: 120px;
-    height: 120px;
-  }
-  .g1{
-    width:550px ;
-    height:100px;
-  }
-.hd1{
-    width:250px ;
-    height:70px
-    ;
+.k1 {
+  width: 600px;
+  height: 600px;
 }
 
-.po1{
-  width: 400px;
-  height: 200px;
-}
-.co1{
-  width:200px ;
-  height:200px ;
+#background {
+  display: flex;
+  flex-direction: row;
 }
 
-.r1{
-height: 370px;
-
+#motherboard,
+#cpu,
+#psu,
+#gpu,
+#cooling,
+#hard-drive,
+.m1,
+.c1,
+.g1,
+.hd1,
+.r1,
+.po1,
+.co1 {
+  min-width: 30px;
+  min-height: 30px;
+  position: absolute;
 }
 
-#start_game{
+#ram {
+  width: 75px;
+  min-height: 200px;
+  position: absolute;
+}
+
+#mb-desc {
+  display: none;
+}
+
+.m1:hover #mb-desc {
+  display: block;
+  color: brown;
+}
+
+#text_show {
+  position: absolute;
+}
+
+#text {
+  resize: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.m1 {
+  width: 300px;
+  height: 348px;
+}
+
+.c1 {
+  width: 72px;
+  height: 72px;
+}
+
+.g1 {
+  width: 250px;
+  height: 50px;
+}
+
+.hd1 {
+  width: 150px;
+  height: 50px;
+}
+
+.po1 {
+  width: 240px;
+  height: 120px;
+}
+
+.co1 {
+  width: 120px;
+  height: 120px;
+}
+
+.r1 {
+  height: 220px;
+}
+
+#start_game {
   font-family: Roboto;
 }
 
-#start_game_button{
+#start_game_button {
   font-family: Roboto;
   margin-bottom: 5px;
 }
 
-#start_game_div{
+#start_game_div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -117,6 +130,6 @@ height: 370px;
   margin-right: 20px;
 }
 
-#body-bg{
-  background-color:aquamarine
+#body-bg {
+  background-color: aquamarine
 }
