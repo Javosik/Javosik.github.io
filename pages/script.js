@@ -9,9 +9,8 @@ function make_base() {
   base_image = new Image();
   base_image.onload = function () {
     context.drawImage(base_image, 0, 0, w, h);
+/* 
     //emaplaadi ruut
-    context.fillStyle = "blue";
-    context.fillRect(window.mb_sqr.x, mb_sqr.y, mb_sqr.width, mb_sqr.height);
     context.stroke(window.mb_sqr_path);
 
     //cpu ruut
@@ -30,7 +29,7 @@ function make_base() {
     context.stroke(window.hd_sqr_path)
 
     //cooler ruut
-    context.stroke(window.co_sqr_path)
+    context.stroke(window.co_sqr_path) */
   }
   base_image.src = 'https://i.ibb.co/gm7S0Lc/Png-Item-3125635.png'
 }
@@ -43,68 +42,70 @@ function getOffset(el) {
   };
 }
 
-var canvas_left = getOffset(canvas).left
-var canvas_top = getOffset(canvas).top    
-
 function onResizeFunction() {
   canvas_left = getOffset(canvas).left
   canvas_top = getOffset(canvas).top
+  console.log("changes in hitbox placement")
+
   if (motherboard.isInPlace == false) {
     mb_sqr.setHitbox(canvas_left+30, canvas_top+75, mb_sqr.width, mb_sqr.height)
     motherboard.setPlace(canvas_left+996, canvas_top+19)
   } else {
+    mb_sqr.setHitbox(canvas_left+30, canvas_top+75, mb_sqr.width, mb_sqr.height)
     motherboard.setPlace(canvas_left+30, canvas_top+75)
   }
+
   if (cpu.isInPlace == false) {
     c_sqr.setHitbox(canvas_left+230, canvas_top+220, c_sqr.width, c_sqr.height)
+    cpu.setPlace(canvas_left+1508, canvas_top+434)
   } else {
-    cpu.setPlace(canvas_left+230, canvas_top+220)
+    c_sqr.setHitbox(canvas_left+230, canvas_top+220, c_sqr.width, c_sqr.height)
+    cpu.setPlace(canvas_left+230, canvas_top+220)   
   }
   
   if (gpu.isInPlace == false) {
-    g_sqr.setPlace(canvas_left+5, canvas_top+480)
+    g_sqr.setHitbox(canvas_left+5, canvas_top+480)
     gpu.setPlace(canvas_left+996, canvas_top+605)
   } else {
-    g_sqr.setPlace(canvas_left+5, canvas_top+480)
+    g_sqr.setHitbox(canvas_left+5, canvas_top+480)
     gpu.setPlace(canvas_left+5, canvas_top+480)
   }
   
   if (ram.isInPlace == false) {
-    r_sqr.setPlace(canvas_left+456, canvas_top+108)
+    r_sqr.setHitbox(canvas_left+456, canvas_top+108)
     ram.setPlace(canvas_left+1514, canvas_top+36)
   } else {
-    r_sqr.setPlace(canvas_left+456, canvas_top+108)
+    r_sqr.setHitbox(canvas_left+456, canvas_top+108)
     ram.setPlace(canvas_left+456, canvas_top+108)
   }
   
   if (psu.isInPlace == false) {
-    psu_sqr.setPlace(canvas_left+59, canvas_top+687)
+    psu_sqr.setHitbox(canvas_left+59, canvas_top+687)
     psu.setPlace(canvas_left+1010, canvas_top+719)
   } else {
-    psu_sqr.setPlace(canvas_left+59, canvas_top+687)
+    psu_sqr.setHitbox(canvas_left+59, canvas_top+687)
     psu.setPlace(canvas_left+59, canvas_top+687)
   }
   
   if (hard_drive.isInPlace == false) {
-    hd_sqr.setPlace(canvas_left+544, canvas_top+595)
+    hd_sqr.setHitbox(canvas_left+544, canvas_top+595)
     hard_drive.setPlace(canvas_left+1007, canvas_top+948)
   } else {
-    hd_sqr.setPlace(canvas_left+544, canvas_top+595)
+    hd_sqr.setHitbox(canvas_left+544, canvas_top+595)
     hard_drive.setPlace(canvas_left+544, canvas_top+595)
   }
   
   if (cooling.isInPlace == false) {
-    co_sqr.setPlace(canvas_left+194, canvas_top+175)
+    co_sqr.setHitbox(canvas_left+194, canvas_top+175)
     cooling.setPlace(canvas_left+1414, canvas_top+719)
   } else {
-    co_sqr.setPlace(canvas_left+194, canvas_top+175)
+    co_sqr.setHitbox(canvas_left+194, canvas_top+175)
     cooling.setPlace(canvas_left+194, canvas_top+175)
   }
-  
+ 
 }
 
 function move(e) {
-  
 
   var newX = e.clientX - 15;
   var newY = e.clientY - 15;
@@ -232,7 +233,7 @@ function get_description(e) {
   }
 }
 
-window.onload = async function () {
+window.onload = function () {
   document.getElementById('start_game_button').innerHTML = lang[localStorage.getItem('lang')][':end_game']
   document.getElementById('h1_desc').innerHTML = lang[localStorage.getItem('lang')][':descriptions']
   document.title = lang[localStorage.getItem('lang')][':title']
@@ -243,6 +244,6 @@ window.onload = async function () {
   ram.element.addEventListener("mousedown", initialClick, false);
   psu.element.addEventListener("mousedown", initialClick, false);
   cooling.element.addEventListener("mousedown", initialClick, false);
+  window.addEventListener("resize", onResizeFunction);
   make_base()
 }
-window.addEventListener("resize", onResizeFunction);
