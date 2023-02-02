@@ -27,58 +27,58 @@ function onResizeFunction() {
 
   if (motherboard.isInPlace == false) {
     mb_sqr.setHitbox(canvas_left+30, canvas_top, mb_sqr.width, mb_sqr.height)
-    motherboard.setPlace(canvas_left+996-400, canvas_top)
+    motherboard.setPlace(canvas_left+596, canvas_top)
   } else {
-    mb_sqr.setHitbox(canvas_left+30, canvas_top, mb_sqr.width, mb_sqr.height)
-    motherboard.setPlace(canvas_left+30, canvas_top)
+    mb_sqr.setHitbox(canvas_left+60, canvas_top+40, mb_sqr.width, mb_sqr.height)
+    motherboard.setPlace(canvas_left+60, canvas_top+40)
   }
 
   if (cpu.isInPlace == false) {
     c_sqr.setHitbox(canvas_left+230, canvas_top+220, c_sqr.width, c_sqr.height)
-    cpu.setPlace(canvas_left+1508-400, canvas_top+434)
+    cpu.setPlace(canvas_left+1514-615, canvas_top+225)
   } else {
-    c_sqr.setHitbox(canvas_left+230, canvas_top+220, c_sqr.width, c_sqr.height)
-    cpu.setPlace(canvas_left+230, canvas_top+220)   
+    c_sqr.setHitbox(canvas_left+190, canvas_top+130, c_sqr.width, c_sqr.height)
+    cpu.setPlace(canvas_left+190, canvas_top+130)   
   }
   
   if (gpu.isInPlace == false) {
     g_sqr.setHitbox(canvas_left+5, canvas_top+480)
-    gpu.setPlace(canvas_left+996-400, canvas_top+605)
+    gpu.setPlace(canvas_left+996-400, canvas_top+350)
   } else {
-    g_sqr.setHitbox(canvas_left+5, canvas_top+480)
-    gpu.setPlace(canvas_left+5, canvas_top+480)
+    g_sqr.setHitbox(canvas_left+10, canvas_top+270)
+    gpu.setPlace(canvas_left+10, canvas_top+270)
   }
   
   if (ram.isInPlace == false) {
     r_sqr.setHitbox(canvas_left+456, canvas_top+108)
-    ram.setPlace(canvas_left+1514-400, canvas_top+36)
+    ram.setPlace(canvas_left+1514-615, canvas_top)
   } else {
-    r_sqr.setHitbox(canvas_left+456, canvas_top+108)
-    ram.setPlace(canvas_left+456, canvas_top+108)
+    r_sqr.setHitbox(canvas_left+300, canvas_top+60)
+    ram.setPlace(canvas_left+300, canvas_top+60)
   }
   
   if (psu.isInPlace == false) {
     psu_sqr.setHitbox(canvas_left+59, canvas_top+687)
-    psu.setPlace(canvas_left+1010-400, canvas_top+719)
+    psu.setPlace(canvas_left+596, canvas_top+455)
   } else {
-    psu_sqr.setHitbox(canvas_left+59, canvas_top+687)
-    psu.setPlace(canvas_left+59, canvas_top+687)
+    psu_sqr.setHitbox(canvas_left+30, canvas_top+400)
+    psu.setPlace(canvas_left+30, canvas_top+400)
   }
   
   if (hard_drive.isInPlace == false) {
     hd_sqr.setHitbox(canvas_left+544, canvas_top+595)
-    hard_drive.setPlace(canvas_left+1007-400, canvas_top+948)
+    hard_drive.setPlace(canvas_left+596, canvas_top+402)
   } else {
-    hd_sqr.setHitbox(canvas_left+544, canvas_top+595)
-    hard_drive.setPlace(canvas_left+544, canvas_top+595)
+    hd_sqr.setHitbox(canvas_left+350, canvas_top+350)
+    hard_drive.setPlace(canvas_left+350, canvas_top+350)
   }
   
   if (cooling.isInPlace == false) {
     co_sqr.setHitbox(canvas_left+194, canvas_top+175)
-    cooling.setPlace(canvas_left+1414-400, canvas_top+719)
+    cooling.setPlace(canvas_left+1414-560, canvas_top+400)
   } else {
-    co_sqr.setHitbox(canvas_left+194, canvas_top+175)
-    cooling.setPlace(canvas_left+194, canvas_top+175)
+    co_sqr.setHitbox(canvas_left+160, canvas_top+100)
+    cooling.setPlace(canvas_left+160, canvas_top+100)
   }
  
 }
@@ -104,31 +104,31 @@ function move(e) {
   }
 
   if (context.isPointInPath(g_sqr_path, newX, newY) && e.composedPath()[0].className == "g1") {
-    gpu.setPlace(canvas_left+5, canvas_top+480)
+    gpu.setPlace(canvas_left+10, canvas_top+270)
     gpu.isInPlace = true
     return
   }
 
   if (context.isPointInPath(r_sqr_path, newX, newY) && e.composedPath()[0].className == "r1") {
-    ram.setPlace(canvas_left+456, canvas_top+108)
+    ram.setPlace(canvas_left+300, canvas_top+60)
     ram.isInPlace = true
     return
   }
 
   if (context.isPointInPath(psu_sqr_path, newX, newY) && e.composedPath()[0].className == "po1") {
-    psu.setPlace(canvas_left+59, canvas_top+687)
+    psu.setPlace(canvas_left+30, canvas_top+400)
     psu.isInPlace = true
     return
   }
 
   if (context.isPointInPath(hd_sqr_path, newX, newY) && e.composedPath()[0].className == "hd1") {
-    hard_drive.setPlace(canvas_left+544, canvas_top+595)
+    hard_drive.setPlace(canvas_left+350, canvas_top+350)
     hard_drive.isInPlace = true
     return
   }
 
   if (context.isPointInPath(co_sqr_path, newX, newY) && e.composedPath()[0].className == "co1") {
-    cooling.setPlace(canvas_left+194, canvas_top+175)
+    cooling.setPlace(canvas_left+160, canvas_top+100)
     cooling.isInPlace = true
     return
   }
