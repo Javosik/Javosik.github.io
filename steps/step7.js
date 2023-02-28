@@ -89,7 +89,7 @@ function move(e) {
         img.style.filter = "saturate(1)"
         saturated = false
         movable.moving = false
-        text_area.value = "Toiteplokk on õigel kohal, arvuti on valmis töötama."
+        text_area.value = "Toiteplokk on õigel kohal, arvuti on valmis töötama.\n\nAitäh, et panid selle arvuti kokku, võid nüüd mängu kinni panna ja alustada uuesti teises keeles."
         return
       } else {
         document.removeEventListener("mousemove", move);
@@ -163,7 +163,6 @@ function move(e) {
     var text_area = document.querySelector("#text")
     text_area.value = lang[localStorage.getItem('lang')][':step_7']
     document.getElementById('start_game_button').innerHTML = lang[localStorage.getItem('lang')][':end_game']
-    document.getElementById('start_game_button_step').innerHTML = lang[localStorage.getItem('lang')][':next_step']
     document.getElementById('h1_desc').innerHTML = lang[localStorage.getItem('lang')][':descriptions']
     document.title = lang[localStorage.getItem('lang')][':title']
     motherboard.element.addEventListener("mousedown", infoClick, false);
