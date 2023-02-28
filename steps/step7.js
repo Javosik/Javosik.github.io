@@ -90,7 +90,6 @@ function move(e) {
         saturated = false
         movable.moving = false
         text_area.value = "Toiteplokk on õigel kohal, arvuti on valmis töötama."
-        document.getElementById('start_game_button_step').classList.remove("d-none")
         return
       } else {
         document.removeEventListener("mousemove", move);
