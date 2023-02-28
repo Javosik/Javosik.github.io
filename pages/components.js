@@ -1,25 +1,25 @@
 var canvas_left = getOffset(canvas).left
 var canvas_top = getOffset(canvas).top
 
-var motherboard = new Component(canvas_left+596, canvas_top, false, document.getElementById("motherboard"), false)
+var motherboard = new Component(canvas_left+596, canvas_top, false, document.getElementById("motherboard"), false, ":mb")
 motherboard.setPlace(motherboard.x, motherboard.y)
 
-var cpu = new Component(canvas_left+1514-615, canvas_top+225, false, document.getElementById("cpu"), false)
+var cpu = new Component(canvas_left+1514-615, canvas_top+225, false, document.getElementById("cpu"), false, ":cpu")
 cpu.setPlace(cpu.x, cpu.y)
 
-var gpu = new Component(canvas_left+996-400, canvas_top+350, false, document.getElementById("gpu"), false)
+var gpu = new Component(canvas_left+996-400, canvas_top+350, false, document.getElementById("gpu"), false, ":gpu")
 gpu.setPlace(gpu.x, gpu.y)
 
-var hard_drive = new Component(canvas_left+596, canvas_top+402, false, document.getElementById("hard-drive"), false)
+var hard_drive = new Component(canvas_left+596, canvas_top+402, false, document.getElementById("hard-drive"), false, ":hdd")
 hard_drive.setPlace(hard_drive.x, hard_drive.y)
 
-var ram = new Component(canvas_left+1514-615, canvas_top, false, document.getElementById("ram"), false)
+var ram = new Component(canvas_left+1514-615, canvas_top, false, document.getElementById("ram"), false, ":ram")
 ram.setPlace(ram.x, ram.y)
 
-var psu = new Component(canvas_left+596, canvas_top+455, false, document.getElementById("psu"), false)
+var psu = new Component(canvas_left+596, canvas_top+455, false, document.getElementById("psu"), false, ":psu")
 psu.setPlace(psu.x, psu.y)
 
-var cooling = new Component(canvas_left+1414-560, canvas_top+400, false, document.getElementById("cooling"), false)
+var cooling = new Component(canvas_left+1414-560, canvas_top+400, false, document.getElementById("cooling"), false, ":cooling")
 cooling.setPlace(cooling.x, cooling.y)
 
 var mb_sqr = new Hitbox(canvas_left+30, canvas_top, 300, 348)

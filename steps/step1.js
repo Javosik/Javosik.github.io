@@ -65,7 +65,7 @@ function move(e) {
         img.style.filter = "saturate(1)"
         saturated = false
         movable.moving = false
-        text_area.value = "Emaplaat on õigel kohal, võib edasi liikuda."
+        text_area.value = lang[localStorage.getItem('lang')][movable.name] + " " + lang[localStorage.getItem('lang')][':right_place']
         document.getElementById('start_game_button_step').classList.remove("d-none")
         return
       } else {

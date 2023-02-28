@@ -22,12 +22,13 @@ class Hitbox {
   }
 
   class Component {
-    constructor(x, y, isInPlace, element, moving) {
+    constructor(x, y, isInPlace, element, moving, name) {
       this.x = x
       this.y = y
       this.isInPlace = isInPlace
       this.element = element
       this.moving = moving
+      this.name = name
     }
   
     setPlace(x, y) {

@@ -89,7 +89,7 @@ function move(e) {
         img.style.filter = "saturate(1)"
         saturated = false
         movable.moving = false
-        text_area.value = "Toiteplokk on õigel kohal, arvuti on valmis töötama.\n\nAitäh, et panid selle arvuti kokku, võid nüüd mängu kinni panna ja alustada uuesti teises keeles."
+        text_area.value = text_area.value = lang[localStorage.getItem('lang')][movable.name] + " " + lang[localStorage.getItem('lang')][':right_place_end']
         return
       } else {
         document.removeEventListener("mousemove", move);
