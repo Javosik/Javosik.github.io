@@ -1,6 +1,7 @@
 lang = {
   en: {
     ":title": "Computer building simulator",
+    ":game_desc": "Tap the right item and then drag it to correct place",
     ":start_game": "Start game",
     ":end_game": "End game",
     ":game_over": "Game over",
@@ -60,6 +61,7 @@ lang = {
   },
   et: {
     ":title": "Arvuti kokkupaneku simulaator",
+    ":game_desc": "Puuduta õiget varuosa ja seejärel liiguta see õigele kohale.",
     ":start_game": "Alusta mängu",
     ":end_game": "Lõpeta mäng",
     ":game_over": "Mäng on läbi",
@@ -119,6 +121,7 @@ lang = {
   },
   ru: {
     ":title": "Симулятор сборки компьютера",
+    ":game_desc": "Нажмите на правильные компоненты и перетащите их на правильное место.",
     ":start_game": "Начать игру",
     ":end_game": "Закончить игру",
     ":game_over": "Игра окончена",
